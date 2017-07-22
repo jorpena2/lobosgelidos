@@ -1,0 +1,26 @@
+{
+  "name": "lobosgelidosweb",
+  "version": "1.0.0",
+  "description": "Web page of Lobos Gelidos",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorpena2/lobosgelidos.git"
+  },
+  "author": "Raspo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorpena2/lobosgelidos/issues"
+  },
+  "homepage": "https://github.com/jorpena2/lobosgelidos#readme"
+}

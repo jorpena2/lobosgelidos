@@ -11,6 +11,9 @@
 		<title>Lobos gélidos</title>
 		<link rel="icon" type="image/png" href="favicon.ico">
 		<link rel="stylesheet" type="text/css" href="styleIndex2.css">
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/lodash/dist/lodash.min.js"></script>
+		<script src="bower_components/moment/min/moment.min.js"></script>
 	</head>
 
 	<body>
