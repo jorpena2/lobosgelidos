@@ -1,0 +1,271 @@
+/*****************************************
+*      Autors:  Jorge Peris 		     *
+*****************************************/
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+   /* border-top: 1px solid red;
+    border-bottom: 1px solid red;*/
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body{
+	background-image: url('background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+
+/***********************************
+/*				TITLE			   *
+/**********************************/
+
+header{
+	width: 100%;
+}
+
+#wowlogo{
+	float: left;
+	width: 25%;
+	height: auto;
+}
+
+#wowlogo a img{
+	height: 100%;
+	width: 100%;
+
+}
+
+#title{
+	float: left;
+	width: 50%;
+	height: auto;
+}
+
+h1{
+	background: -webkit-linear-gradient(bottom, #31B404, #000000);
+	font-family: "Monotype Corsiva";
+	float:left;
+	margin-left: 25%;
+	color: transparent;
+	font-size: 300%;
+	text-align: center;
+	-webkit-background-clip: text;
+	text-shadow: 1px 1px #DBA901;
+}
+
+#body{
+	clear:both;
+}
+
+
+/***********************************
+/*				PAGE			   *
+/**********************************/
+
+/*
+#navigation{
+	text-align:center;
+	background-color: #3B240B;
+	height: auto;
+}*/
+
+#navigation{
+	width: 50%;
+	margin: auto;
+}
+
+#navigation ul{
+	list-style-type: none;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	/*background-image: url("barra legion.gif");
+	background-repeat: no-repeat;
+	background-size: fixed;*/
+	background: rgb(96,44,7);
+	display: table;
+}
+/*
+#navigation ul li:first-child{
+	border-left: solid;
+	border-left-width: 2px;
+}*/
+
+#navigation ul li{
+	text-align: center;
+	float:left;
+	width: 25%;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	/*
+	border-right: solid;
+	border-right-width: 2px;
+	border-top: solid;
+	border-top-width: 2px;
+	border-bottom: solid;
+	border-bottom-width: 2px;
+	background-color: #3B240B;*/
+}
+
+#navigation ul li:hover{
+	/*background: rgba(51, 102, 0, 0.7);*/
+	background: rgba(131, 89, 0, 0.7);
+	border-radius: 6px;
+
+}
+
+#navigation ul li a{
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	padding: 1.2em;
+	font-size: 20px;
+	color: #DBA901;
+	text-shadow: 0.5px 0.5px #ff0000;
+	font-family: "Semplicita Pro", "Open Sans", Arial, Helvetica, sans-serif;
+	overflow: auto;
+	
+}
+
+#board{
+	margin-top: 1%;
+	margin-left: 25%;
+	width: 50%;
+	padding: 1%;
+	background-color: #886A08;
+}
+
+hr{
+	border-color: black;
+}
+
+h2{
+	text-align: center;
+}
+
+h3{
+	text-align: center;
+}
+
+h4{
+
+float: left;
+
+}
+
+span.delete img{
+	width: : 20px;
+	height: 20px;
+	float:right;
+}
+
+span.delete img:hover{
+	cursor: pointer;
+}
+
+span.delete + p{
+	clear:both;
+	font-size: 13px;
+
+}
+
+img.boardImg{
+	width: 50%;
+	height: auto;
+}
+
+/*
+#navigation>table{
+	margin: 0 auto;
+}
+
+#navigation>table>thead>tr{
+
+}
+
+#navigation>table>thead>tr>th{	
+	width: 15%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background-color: #3B240B;
+	border-left: solid;
+	border-top: solid;
+	border-bottom: solid;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#lastTh{
+	border-right: solid;
+}
+#navigation>table>thead>tr>th>h2{
+	font-size: 15px;
+	text-decoration: none;
+	color: #DBA901;
+	text-shadow: 0.5px 0.5px #ff0000;
+	font-family: "Semplicita Pro", "Open Sans", Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+#navigation>table>thead>tr>th:hover{
+	background-color: #FFBF00;
+}
+
+#navigation>table>thead>tr>th:hover{
+	cursor:pointer;
+}*/
+
+@media screen and (max-width: 855px){
+	h1{
+		font-size: 200%;
+		float:right;
+	}
+}
+
+@media screen and (max-width: 980px){
+
+}
+
+/*#augur{
+	width: 50%;
+	height: auto;
+}*/
+
+#form{
+	margin-left: 25%;
+	padding-left: 2%;
+	width: 50%;
+	padding-right: 0;
+	background-color: #088A08;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Lobos Gélidos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="signinStyle.css">
+</head>
+
+<body ng-app="formApp">
+	<div id="form" ng-controller="formController">
+		<form method="post" name="signIn" action="verify.php">
+
+			<p>Nombre:</p>
+			<input type="text" name="name" maxlength="20" ng-model="name" ng-change="nameCheck()">
+			<p>Apellidos:</p>
+			<input type="text" name="surname" maxlength="20" ng-model="surname" ng-change="surnameCheck()">
+			<p>Usuario:</p>
+			<input type="text" name="nickname" maxlength="20" ng-model="nick" ng-change="nickCheck()">
+			<p>Contraseña:</p>
+			<input type="password" name="password" ng-model="pass" ng-change="passCheck()" maxlength="20">
+			<p>Confirmar contraseña:</p>
+			<input type="password" name="passwordConf" ng-model="pass2" ng-change="passCheck()" maxlength="20"><img src="blank.gif" id="confPass">
+			<p>Correo electrónico:</p>
+			<input type="text" name="email" ng-model="emailReg" ng-change="emailCheck()" maxlength="40"><span id="alertMail"></span>
+			<p>Confirmar correo electrónico:</p>
+			<input type="text" name="emailConf" ng-model="emailReg2" ng-change="emailCheck()" maxlength="40"><img src="blank.gif" id="confMail"><br><br>
+			<input type="submit" value="Enviar" disabled id="button">
+
+		</form>
+	</div>
+	<script>
+
+		var mailFlag = 0;
+		var passFlag = 0;
+		var expresion = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; // Regular expresion
+		// for verifying emails format
+
+		var app = angular.module('formApp', []);
+		app.controller('formController', ['$scope', function($scope){
+
+			$scope.nameCheck = function(){
+				checkFields();
+			}
+
+			$scope.surnameCheck = function(){
+				checkFields();
+			}
+
+			$scope.nickCheck =function(){
+				checkFields();
+			}
+
+			$scope.emailCheck = function(){
+
+				if($scope.emailReg2 == '' && $scope.emailReg == '')
+					document.getElementById("confMail").setAttribute('src','blank.gif');
+				else{
+					if($scope.emailReg != $scope.emailReg2){
+						document.getElementById("confMail").setAttribute('src','delete_64.png');
+						mailFlag = 0;
+					}
+					else{
+						document.getElementById("confMail").setAttribute('src','tick_64.png');
+						mailFlag = 1;
+					}
+				}
+
+				if(!$scope.emailReg.match(expresion)){
+					mailFlag = 0;
+					document.getElementById("alertMail").innerHTML = "El formato del correo electrónico no es válido";
+				}
+				else{
+					document.getElementById("alertMail").innerHTML = "";
+				}
+
+				checkFields();
+
+			};
+
+			$scope.passCheck = function(){
+
+				if($scope.pass == '' && $scope.pass2 == '')
+					document.getElementById("confPass").setAttribute('src','blank.gif');
+				else{
+					if($scope.pass != $scope.pass2){
+						document.getElementById("confPass").setAttribute('src','delete_64.png');
+						passFlag = 0;
+					}
+					else{
+						document.getElementById("confPass").setAttribute('src','tick_64.png');
+						passFlag = 1;
+					}
+				}
+
+				checkFields();
+
+			};
+
+			function checkFields(){
+
+				if (mailFlag && passFlag && $scope.name && $scope.surname && $scope.nick)
+					document.getElementById("button").disabled = false;
+				else
+					document.getElementById("button").disabled = true;
+			}
+		}]);
+
+	</script>
+
+</body>
+</html>
